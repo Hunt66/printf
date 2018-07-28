@@ -1,6 +1,6 @@
 #include"holberton.h"
 #include <unistd.h>
-
+#include <stdarg.h>
 /**
  *_printfc - prints an input char
  *@args: the input char
