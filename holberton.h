@@ -1,16 +1,25 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
+#include <stdarg.h>
 
 typedef struct format
 {
 	char b;
-	void (*func)(va_list);
-} fm_t
+	int (*func)(va_list);
+} fm_t;
 
 int _printf(const char *format, ...);
 int _putchar(char c);
-void printfc(va_list);
-void printfs(va_list);
-void printp(va_list);
+int _strlen(char *);
+
+int _printfc(va_list);
+int _printfs(va_list);
+int _printfp(va_list);
+int _printfd(va_list);
+int _printfb(va_list);
+int _printfr(va_list);
+int _printfR(va_list);
+int _printfu(va_list);
+int _printfo(va_list);
 
 #endif
