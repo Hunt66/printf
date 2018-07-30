@@ -2,6 +2,11 @@
 #define HOLBERTON_H
 #include <stdarg.h>
 
+/**
+ * struct format - Struct format
+ * @b: the letter
+ * @func: function associated with letter
+ */
 typedef struct format
 {
 	char b;
