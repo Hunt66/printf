@@ -1,7 +1,7 @@
 #include <stdarg.h>
 #include "holberton.h"
 
-#define STRUCT_SIZE 1
+#define STRUCT_SIZE 5
 
 int _printf(const char *format, ...)
 {
@@ -11,7 +11,8 @@ int _printf(const char *format, ...)
 	va_list args;
 	//fm_t list[] = {{'c', _printfc}, {'s', _printfs}, {'%', _printfp}, 
 		//{'d', _printfd}, {'i', _printdi}};
-	fm_t list = {'c', _printfc};
+	fm_t list[] = {{'c', _printfc}, {'s', _printfs}, {'p', _printfp}, 
+		{'d', _printfd}, {'i', _printfd}};
 
 	for (str_size = 0; format[str_size]; str_size++)
 		;
@@ -29,14 +30,19 @@ int _printf(const char *format, ...)
 			j = 0;
 			while (j < STRUCT_SIZE)
 			{
-				//if (specifier == list[j].b)
-					//list[j].func(args);
+				if (specifier == list[j].b)
+				{
+					list[j].func(args);
+					string = 1;
+				}
+				
+			  	/*
 				if (specifier == list.b)
 				{
 			  		list.func(args);
 					string = 1;
 				}
-
+				*/
 				j++;
 			}
 
