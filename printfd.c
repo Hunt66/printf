@@ -1,13 +1,13 @@
-/*#include"test_header.h"*/
 #include<stdarg.h>
-
+#include"holberton.h"
 
 /**
  *print_number- prints an intiger
  *@n: intiger to be printed
  *Return: void
  */
-
+int int_pow(int x, int y);
+void print_number(int n);
 
 
 void print_number(int n)
@@ -102,12 +102,7 @@ int int_pow(int x, int y)
 
 int _printfd(va_list args)
 {
-	int i = va_arg(args, int);
-
-	if (sizeof(i) != 4)
-	{
-		return (-1);
-	}
+	int i = va_arg(args, int)
 
 	print_number(i);
 	return (0);
