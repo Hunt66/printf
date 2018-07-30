@@ -30,17 +30,23 @@ int _printfs(va_list args)
 	int i;
 	char *str = (char *)va_arg(args, char *);
 
+	if (str)
+	  {
+
 	/*I get a gcc error when I run printf on an int and it is
 	 also true when I do it on strlen so this might work*/
 	/*if (!strlen(str))
 	  return (-1);*/
 
 
-	for (i = 0 ; str[i] ; i++)
-	{
+	    for (i = 0 ; str[i] ; i++)
+	      {
 		_putchar(str[i]);
-	}
-	return (0);
+	      }
+	  
+	    return (0);
+	  }
+	return (1);
 }
 
 
