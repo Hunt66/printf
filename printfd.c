@@ -1,14 +1,13 @@
 #include<stdarg.h>
 #include"holberton.h"
 
-
-int int_pow(int x, int y); 
-
 /**
  *print_number- prints an intiger
  *@n: intiger to be printed
  *Return: void
  */
+int int_pow(int x, int y);
+void print_number(int n);
 
 
 
