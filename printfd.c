@@ -103,7 +103,7 @@ int int_pow(int x, int y)
 
 int _printfd(va_list args)
 {
-	int i = va_arg(args, int)
+  int i = va_arg(args, int);
 
 	print_number(i);
 	return (0);
