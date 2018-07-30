@@ -10,7 +10,6 @@ int int_pow(int x, int y);
 void print_number(int n);
 
 
-
 void print_number(int n)
 {
 	int hold, cnt, prt;
