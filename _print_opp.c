@@ -49,7 +49,9 @@ int _printfs(va_list args)
  */
 
 
-void _printfp(void)
+int _printfp(va_list args)
 {
+  (void) args;
 	_putchar('%');
+	return (0);
 }
