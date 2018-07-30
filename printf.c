@@ -13,7 +13,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int i, j = 0, str_size = 0, string = 0;
+	int i, j = 0, str_size = 0, count = 0, string = 0;
 	char byte = '\0';
 	char specifier = '\0';
 	va_list args;
@@ -35,7 +35,7 @@ int _printf(const char *format, ...)
 	for (i = 0; i < str_size; i++)
 	{
 		byte = format[i];
-
+		
 		if (byte == '%')
 		{
 			specifier = format[++i];
@@ -46,7 +46,7 @@ int _printf(const char *format, ...)
 			{
 				if (specifier == list[j].b)
 				{
-					list[j].func(args);
+					count += list[j].func(args);
 					string = 1;
 				}
 
@@ -55,6 +55,9 @@ int _printf(const char *format, ...)
 
 		}
 
+		else
+			count++;
+
 		if (!string)
 			_putchar(byte);
 
@@ -62,5 +65,5 @@ int _printf(const char *format, ...)
 	}
 
 	va_end(args);
-	return (str_size);
+	return (count);
 }
