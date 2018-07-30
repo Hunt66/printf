@@ -11,9 +11,9 @@ void print_number(int n);
  */
 
 
-void print_number(int n)
+int print_number(int n)
 {
-	int hold, cnt, prt;
+  int hold, cnt, prt, out;
 	unsigned int prt2;
 
 	prt2 = 1;
@@ -31,6 +31,7 @@ void print_number(int n)
 			break;
 		cnt++;
 	}
+	out = cnt;
 	if (n >= 0 && cnt > 0)
 	{
 		prt = (n / int_pow(10, cnt));
@@ -76,6 +77,7 @@ void print_number(int n)
 	}
 	if (n == 0)
 		_putchar('0');
+	return (out);
 }
 
 
@@ -103,8 +105,9 @@ int int_pow(int x, int y)
 
 int _printfd(va_list args)
 {
+  int count;
   int i = va_arg(args, int);
 
-	print_number(i);
-	return (0);
+	count = print_number(i);
+	return (count);
 }
