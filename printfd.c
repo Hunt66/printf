@@ -1,6 +1,5 @@
-/*#include"test_header.h"*/
 #include<stdarg.h>
-
+#include "holberton.h"
 
 /**
  *print_number- prints an intiger
