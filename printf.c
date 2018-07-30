@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 	char specifier = '\0';
 	va_list args;
 
-	fm_t list[] = {{'c', _printfc}, {'s', _printfs}, {'p', _printfp},
+	fm_t list[] = {{'c', _printfc}, {'s', _printfs}, {'%', _printfp},
 		{'d', _printfd}, {'i', _printfd}, {'b', _printfb}, {'r', _printfr},
 		{'R', _printfR}, {'u', _printfu}, {'o', _printfo}};
 
