@@ -1,7 +1,5 @@
 #include <stdarg.h>
 #include "holberton.h"
-#include <stdio.h>
-
 
 int _printfs(va_list args)
 {
