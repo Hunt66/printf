@@ -1,5 +1,6 @@
 #include <stdarg.h>
 #include "holberton.h"
+#include <stdio.h>
 
 int int_pow(int x, int y);
 int print_number(int n);
@@ -62,20 +63,21 @@ int _printf(const char *format, ...)
 				j++;
 			}
 
+			if (!invalid && !string)
+			{
+				count += 2;
+				_putchar('%');
+				_putchar(specifier);
+				string = 1;
+			}
 		}
-
-		else
-			count++;
-
+		
 		if (!string)
-			_putchar(byte);
-
-		if (!invalid && byte == '%')
 		{
 			count++;
-			_putchar(specifier);
+			_putchar(byte);
 		}
-			
+
 		string = 0;
 	}
 
