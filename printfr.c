@@ -17,8 +17,8 @@ int _printfr(va_list args)
 	if (!s)
 		s = "(null)";
 
-	i = _strlen(s) - 1;
-	len = i;
+	len = _strlen(s);
+	i = len - 1;
 
 	for (; i >= 0; i--)
 		_putchar(s[i]);
