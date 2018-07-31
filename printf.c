@@ -43,7 +43,7 @@ int _printf(const char *format, ...)
 		if (byte == '%')
 		{
 			specifier = format[++i];
-			
+
 			if (!specifier)
 				return (-1);
 			j = 0;
@@ -71,7 +71,7 @@ int _printf(const char *format, ...)
 				string = 1;
 			}
 		}
-		
+
 		if (!string)
 		{
 			count++;
