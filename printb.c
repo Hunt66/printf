@@ -4,7 +4,7 @@
 /**
  * _printfb - prints binary from decimal
  *@args: the input decimal number
- *Return count of digets
+ *Return: count of digets
  */
 
 
