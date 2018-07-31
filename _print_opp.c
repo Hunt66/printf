@@ -25,16 +25,15 @@ int _printfs(va_list args)
 	int i;
 	char *str = (char *)va_arg(args, char *);
 
-	if (str)
-	{
-		for (i = 0 ; str[i] ; i++)
-		{
-			_putchar(str[i]);
-		}
+	if (!str)
+		str = "(null)";
 
-		return (i);
+	for (i = 0 ; str[i] ; i++)
+	{
+		_putchar(str[i]);
 	}
-	return (0);
+
+	return (i);
 }
 
 
