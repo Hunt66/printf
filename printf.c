@@ -19,7 +19,7 @@ int _printfd(va_list args);
  */
 int _printf(const char *format, ...)
 {
-	int i, j = 0, str_size = 0, count = 0, string = 0;
+	int i, j = 0, str_size = 0, count = 0, string = 0, correct_specifier = 0;
 	char byte = '\0';
 	char specifier = '\0';
 	va_list args;
@@ -44,10 +44,14 @@ int _printf(const char *format, ...)
 
 			while (j < STRUCT_SIZE)
 			{
+				correct_specifier = 0;
+
 				if (specifier == list[j].b)
 				{
 					count += list[j].func(args);
 					string = 1;
+					correct_specifier = 1;
+					break;
 				}
 
 				j++;
@@ -60,6 +64,12 @@ int _printf(const char *format, ...)
 
 		if (!string)
 			_putchar(byte);
+
+		if (!correct_specifier && byte == '%')
+		{
+			count++;
+			_putchar(specifier);
+		}
 
 		string = 0;
 	}
@@ -79,7 +89,7 @@ int _printf(const char *format, ...)
 
 int print_number(int n)
 {
-  int hold, cnt, prt, out = 0;
+	int hold, cnt, prt, out = 0;
 	unsigned int prt2;
 
 	prt2 = 1;
@@ -98,7 +108,7 @@ int print_number(int n)
 			break;
 		cnt++;
 	}
-	
+
 	if (n >= 0 && cnt > 0)
 	{
 		prt = (n / int_pow(10, cnt));
@@ -182,8 +192,8 @@ int int_pow(int x, int y)
 
 int _printfd(va_list args)
 {
-  int count;
-  int i = va_arg(args, int);
+	int count;
+	int i = va_arg(args, int);
 
 	count = print_number(i);
 	return (count);
