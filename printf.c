@@ -41,7 +41,9 @@ int _printf(const char *format, ...)
 			b = 1;
 
 			specifier = format[++i];
-
+			
+			if (!specifier)
+				return (-1);
 			j = 0;
 
 			while (j < STRUCT_SIZE)
