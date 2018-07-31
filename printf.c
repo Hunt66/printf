@@ -24,12 +24,6 @@ int _printf(const char *format, ...)
 	char specifier = '\0';
 	va_list args;
 
-	/*
-	fm_t list[] = {{'c', _printfc}, {'s', _printfs}, {'%', _printfp},
-		{'d', _printfd}, {'i', _printfd}, {'b', _printfb}, {'r', _printfr},
-		{'R', _printfR}, {'u', _printfu}, {'o', _printfo}};
-	*/
-
 	fm_t list[] = {{'d', _printfd}, {'i', _printfd}, {'c', _printfc},
 	  {'s', _printfs}, {'%', _printfp}};
 
@@ -41,7 +35,7 @@ int _printf(const char *format, ...)
 	for (i = 0; i < str_size; i++)
 	{
 		byte = format[i];
-		
+
 		if (byte == '%')
 		{
 			specifier = format[++i];
