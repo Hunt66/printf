@@ -1,6 +1,5 @@
 #include <stdarg.h>
 #include "holberton.h"
-#include <stdio.h>
 
 int int_pow(int x, int y);
 int print_number(int n);
