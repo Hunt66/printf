@@ -7,7 +7,7 @@ int _printf(const char *format, ...);
 int _printfd(va_list args);
 
 
-#define STRUCT_SIZE 6
+#define STRUCT_SIZE 7
 
 /**
  * _printf - prints data and formats it
@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 	va_list args;
 
 	fm_t list[] = {{'d', _printfd}, {'i', _printfd}, {'c', _printfc},
-	  {'s', _printfs}, {'%', _printfp}, {'r', _printfr}};
+	  {'s', _printfs}, {'%', _printfp}, {'r', _printfr}, {'R', _printfR}};
 
 	if (!format)
 		return (-1);
