@@ -1,6 +1,6 @@
 #include"holberton.h"
 #include <stdarg.h>
-
+#include <unistd.h>
 
 
 /**
@@ -59,4 +59,28 @@ int _printfp(va_list args)
   (void) args;
 	_putchar('%');
 	return (0);
+}
+
+
+
+/**
+ *  _putchar - writes the character c to stdout
+ *  @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int _putchar(char c)
+{
+  	return (write(1, &c, 1));
+}
+
+int _strlen(char *s)
+{
+	int len;
+
+	for (len = 0; s[len]; len++)
+		;
+
+	return (len);
 }
