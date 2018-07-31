@@ -1,10 +1,6 @@
 #include <stdarg.h>
-
 #include <stdlib.h>
-
 #include "holberton.h"
-
-
 
 int _printfo(va_list args)
 {
@@ -17,7 +13,6 @@ int _printfo(va_list args)
 
 	for (i = 0; num > 0; num /= eight, i++)
 	{
-		printf("%lu\n", num);
 		hold_num[i] = (num % eight);
 	}
 
