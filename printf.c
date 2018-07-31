@@ -32,6 +32,9 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
+	if (!format)
+		return (-1);
+
 	for (i = 0; i < str_size; i++)
 	{
 		byte = format[i];
@@ -41,7 +44,9 @@ int _printf(const char *format, ...)
 			b = 1;
 
 			specifier = format[++i];
-
+			
+			if (!specifier)
+				return (-1);
 			j = 0;
 
 			while (j < STRUCT_SIZE)
