@@ -1,5 +1,5 @@
 #include "holberton.h"
-
+#include <limits.h>
 /**
  * _printfb - prints binary from decimal
  *@args: the input decimal number
@@ -9,11 +9,13 @@
 
 int _printfb(va_list args)
 {
-	unsigned int decimal = (int)va_arg(args, int);
+	long unsigned int decimal = (unsigned int)va_arg(args, int);
 	long unsigned int div;
 	int count = 0;
 
-	for (div = 1 ; div < decimal ; div = div * 2)
+	if (decimal > (unsigned int)INT_MAX * 2)
+		return (0);
+	for (div = 1 ; div <= decimal ; div = div * 2)
 		;
 	for (div = div / 2 ; div > 1 ; div = div / 2)
 	{
@@ -22,5 +24,6 @@ int _printfb(va_list args)
 		count++;
 	}
 	_putchar((decimal / div) + '0');
-	return (count + 1);
+	count ++;
+	return (count);
 }
