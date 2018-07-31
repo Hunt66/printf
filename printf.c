@@ -7,7 +7,7 @@ int _printf(const char *format, ...);
 int _printfd(va_list args);
 
 
-#define STRUCT_SIZE 6
+#define STRUCT_SIZE 5
 
 /**
  * _printf - prints data and formats it
@@ -19,25 +19,27 @@ int _printfd(va_list args);
  */
 int _printf(const char *format, ...)
 {
-	int i, j = 0, str_size = 0, count = -1, string = 0;
+	int i, j = 0, str_size = 0, count = 0, string = 0, b = 0;
 	char byte = '\0';
 	char specifier = '\0';
 	va_list args;
 
 	fm_t list[] = {{'d', _printfd}, {'i', _printfd}, {'c', _printfc},
-	  {'s', _printfs}, {'%', _printfp}, {'r', _printfr}};
+	  {'s', _printfs}, {'%', _printfp}};
 
 	for (str_size = 0; format[str_size]; str_size++)
 		;
 
 	va_start(args, format);
 
-	for (i = 0, count = 0; i < str_size; i++)
+	for (i = 0; i < str_size; i++)
 	{
 		byte = format[i];
 
 		if (byte == '%')
 		{
+			b = 1;
+
 			specifier = format[++i];
 
 			j = 0;
@@ -59,10 +61,11 @@ int _printf(const char *format, ...)
 		else
 			count++;
 
-		if (!string)
+		if (!string && !b)
 			_putchar(byte);
 
 		string = 0;
+		b = 0;
 	}
 
 	va_end(args);
