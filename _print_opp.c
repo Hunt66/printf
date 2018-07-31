@@ -13,7 +13,7 @@
 int _printfc(va_list args)
 {
 	_putchar((char)va_arg(args, int));
-	return (0);
+	return (1);
 }
 
 
@@ -43,7 +43,7 @@ int _printfs(va_list args)
 		_putchar(str[i]);
 	      }
 	  
-	    return (0);
+	    return (i - 1);
 	  }
 	return (1);
 }
@@ -58,7 +58,7 @@ int _printfp(va_list args)
 {
   (void) args;
 	_putchar('%');
-	return (0);
+	return (1);
 }
 
 
