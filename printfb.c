@@ -13,8 +13,8 @@ int _printfb(va_list args)
 	long unsigned int div;
 	int count = 0;
 
-	if (decimal > (unsigned int)INT_MAX * 2)
-		return (0);
+	/*if (decimal > (unsigned int)INT_MAX * 2)
+	  return (0);*/
 	if (decimal == 0)
 	{
 		_putchar('0');
