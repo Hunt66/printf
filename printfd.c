@@ -3,7 +3,7 @@
 
 
 int int_pow(int x, int y);
-void print_number(int n);
+int print_number(int n);
 /**
  *print_number- prints an intiger
  *@n: intiger to be printed
