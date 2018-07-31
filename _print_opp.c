@@ -2,6 +2,8 @@
 #include <stdarg.h>
 #include <unistd.h>
 
+int _strlen(char *s);
+int _putchar(char c);
 
 /**
  *_printfc - prints an input char
@@ -32,10 +34,6 @@ int _printfs(va_list args)
 	if (str)
 	  {
 
-	/*I get a gcc error when I run printf on an int and it is
-	 also true when I do it on strlen so this might work*/
-	/*if (!strlen(str))
-	  return (-1);*/
 
 
 	    for (i = 0 ; str[i] ; i++)
@@ -43,9 +41,9 @@ int _printfs(va_list args)
 		_putchar(str[i]);
 	      }
 	  
-	    return (i - 1);
+	    return ( _strlen(str));
 	  }
-	return (1);
+	return (0);
 }
 
 
@@ -74,6 +72,14 @@ int _putchar(char c)
 {
   	return (write(1, &c, 1));
 }
+
+
+/**
+ *_strlen- finds stringlength
+ *@s: input string
+ *Return: string length int
+ */
+
 
 int _strlen(char *s)
 {
