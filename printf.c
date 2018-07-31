@@ -1,10 +1,7 @@
 #include <stdarg.h>
 #include "holberton.h"
 
-int int_pow(int x, int y);
-int print_number(int n);
-int _printf(const char *format, ...);
-int _printfd(va_list args);
+
 
 
 #define STRUCT_SIZE 7
@@ -25,7 +22,8 @@ int _printf(const char *format, ...)
 	va_list args;
 
 	fm_t list[] = {{'d', _printfd}, {'i', _printfd}, {'c', _printfc},
-	  {'s', _printfs}, {'%', _printfp}, {'r', _printfr}, {'R', _printfR}};
+		       {'s', _printfs}, {'%', _printfp}, {'b', _printfb},
+		       {'r', _printfr}, {'R', _printfR}};
 
 	if (!format)
 		return (-1);

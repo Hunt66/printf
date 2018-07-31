@@ -16,8 +16,10 @@ typedef struct format
 int _printf(const char *format, ...);
 int _putchar(char c);
 int _strlen(char *);
+int int_pow(int x, int y);
 
 int _printfc(va_list);
+int _printfb(va_list);
 int _printfs(va_list);
 int _printfp(va_list);
 int _printfd(va_list);
