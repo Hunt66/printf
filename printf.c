@@ -4,7 +4,7 @@
 
 
 
-#define STRUCT_SIZE 7
+#define STRUCT_SIZE 8
 
 /**
  * _printf - prints data and formats it
