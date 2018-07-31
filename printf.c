@@ -19,7 +19,7 @@ int _printfd(va_list args);
  */
 int _printf(const char *format, ...)
 {
-	int i, j = 0, str_size = 0, count = 0, string = 0, b = 0;
+	int i, j = 0, str_size = 0, count = 0, string = 0, invalid = 0;
 	char byte = '\0';
 	char specifier = '\0';
 	va_list args;
@@ -41,8 +41,6 @@ int _printf(const char *format, ...)
 
 		if (byte == '%')
 		{
-			b = 1;
-
 			specifier = format[++i];
 			
 			if (!specifier)
@@ -51,11 +49,14 @@ int _printf(const char *format, ...)
 
 			while (j < STRUCT_SIZE)
 			{
+				invalid = 0;
 
 				if (specifier == list[j].b)
 				{
 					count += list[j].func(args);
 					string = 1;
+					invalid = 1;
+					break;
 				}
 
 				j++;
@@ -66,11 +67,16 @@ int _printf(const char *format, ...)
 		else
 			count++;
 
-		if (!string && !b)
+		if (!string)
 			_putchar(byte);
 
+		if (!invalid && byte == '%')
+		{
+			count++;
+			_putchar(specifier);
+		}
+			
 		string = 0;
-		b = 0;
 	}
 
 	va_end(args);
