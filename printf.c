@@ -19,7 +19,7 @@ int _printfd(va_list args);
  */
 int _printf(const char *format, ...)
 {
-	int i, j = 0, str_size = 0, count = 0, string = 0;
+	int i, j = 0, str_size = 0, count = -1, string = 0;
 	char byte = '\0';
 	char specifier = '\0';
 	va_list args;
@@ -34,6 +34,7 @@ int _printf(const char *format, ...)
 
 	for (i = 0; i < str_size; i++)
 	{
+		count = 0;
 		byte = format[i];
 
 		if (byte == '%')
