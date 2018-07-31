@@ -79,7 +79,7 @@ int _printf(const char *format, ...)
 
 int print_number(int n)
 {
-  int hold, cnt, prt, out;
+  int hold, cnt, prt, out = 0;
 	unsigned int prt2;
 
 	prt2 = 1;
@@ -89,6 +89,7 @@ int print_number(int n)
 	if (n < 0)
 	{
 		_putchar('-');
+		out++;
 	}
 	while (1)
 	{
@@ -97,17 +98,19 @@ int print_number(int n)
 			break;
 		cnt++;
 	}
-	out = cnt;
+	
 	if (n >= 0 && cnt > 0)
 	{
 		prt = (n / int_pow(10, cnt));
 		_putchar(prt + '0');
+		out++;
 	}
 	else if (cnt > 0)
 	{
 		prt = (n / int_pow(10, cnt));
 		prt2 = prt * -1;
 		_putchar(prt2 + '0');
+		out++;
 	}
 	cnt = cnt - 1;
 	if (n >= 0)
@@ -116,6 +119,7 @@ int print_number(int n)
 		{
 			prt = ((n / int_pow(10, cnt)) % 10);
 			_putchar(prt + '0');
+			out++;
 		}
 	}
 	else
@@ -125,6 +129,7 @@ int print_number(int n)
 			prt = ((n / int_pow(10, cnt)) % 10);
 			prt2 = prt * -1;
 			_putchar(prt2 + '0');
+			out++;
 		}
 	}
 	if (n != 0)
@@ -133,16 +138,22 @@ int print_number(int n)
 		{
 			prt = n % 10;
 			_putchar(prt + '0');
+			out++;
 		}
 		else
 		{
 			prt = n % 10;
 			prt2 = prt * -1;
 			_putchar(prt2 + '0');
+			out++;
 		}
 	}
 	if (n == 0)
+	{
 		_putchar('0');
+		out++;
+	}
+
 	return (out);
 }
 
