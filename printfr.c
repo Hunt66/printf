@@ -13,16 +13,15 @@ int _printfr(va_list args)
 	char *s = va_arg(args, char *);
 	int i, len = 0;
 
-	if (s)
-	{
-		i = _strlen(s) - 1;
-		len = i;
 
-		for (; i >= 0; i--)
-			_putchar(s[i]);
+	if (!s)
+		s = "(null);
 
-		return (0);
-	}
+	i = _strlen(s) - 1;
+	len = i;
+
+	for (; i >= 0; i--)
+		_putchar(s[i]);
 
 	return (len);
 }
