@@ -15,7 +15,7 @@ int _printfr(va_list args)
 
 
 	if (!s)
-		s = "(null);
+		s = "(null)";
 
 	i = _strlen(s) - 1;
 	len = i;
