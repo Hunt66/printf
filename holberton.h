@@ -22,5 +22,6 @@ int _printfs(va_list);
 int _printfp(va_list);
 int _printfd(va_list);
 int _printfr(va_list);
+int _printfR(va_list);
 
 #endif
