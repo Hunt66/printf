@@ -32,7 +32,7 @@ int _printfs(va_list args)
 			_putchar(str[i]);
 		}
 
-		return (i - 1);
+		return (i);
 	}
 	return (0);
 }
