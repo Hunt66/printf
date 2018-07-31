@@ -27,13 +27,13 @@ int _printf(const char *format, ...)
 	fm_t list[] = {{'d', _printfd}, {'i', _printfd}, {'c', _printfc},
 	  {'s', _printfs}, {'%', _printfp}};
 
+	if (!format)
+		return (-1);
+
 	for (str_size = 0; format[str_size]; str_size++)
 		;
 
 	va_start(args, format);
-
-	if (!format)
-		return (-1);
 
 	for (i = 0; i < str_size; i++)
 	{
