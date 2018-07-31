@@ -9,7 +9,7 @@
  */
 
 
-int _printfx(va_list args)
+int _printfX(va_list args)
 {
 	int *list;
 	int i, count = 0;
