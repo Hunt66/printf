@@ -32,9 +32,8 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-	for (i = 0; i < str_size; i++)
+	for (i = 0, count = 0; i < str_size; i++)
 	{
-		count = 0;
 		byte = format[i];
 
 		if (byte == '%')
