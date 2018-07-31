@@ -22,15 +22,4 @@ int _printfs(va_list);
 int _printfp(va_list);
 int _printfd(va_list);
 
-/*
-int _printfb(va_list);
-*/
-
-int _printfr(va_list);
-
-/*
-int _printfR(va_list);
-int _printfu(va_list);
-int _printfo(va_list);
-*/
 #endif
