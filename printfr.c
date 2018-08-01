@@ -2,7 +2,7 @@
 #include "holberton.h"
 
 /**
- * _printfr - reverse string
+ * _printfr - reverse a given string
  * @args: string argument
  *
  * Description: Function takes a string and reverses it
