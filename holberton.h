@@ -12,7 +12,7 @@ typedef struct format
 	char b;
 	int (*func)(va_list);
 } fm_t;
-
+int print_number(int  n);
 int _printf(const char *format, ...);
 int _putchar(char c);
 int _strlen(char *);
@@ -29,5 +29,6 @@ int _printfu(va_list);
 int _printfo(va_list);
 int _printfx(va_list);
 int _printfX(va_list);
+int _printfpp(va_list);
 
 #endif
