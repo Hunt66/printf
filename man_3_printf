@@ -11,6 +11,34 @@ parses it for format specifiers, replaces them with corresponding values and
 prints the string to standard out. 
 .SH OPTIONS
 Print ARGUMENT(s) according to FORMAT:
+
+-%s: takes input as a string
+
+-%c: takes input as a character
+
+-%i: takes input as an integer
+
+-%d: takes input as an integer
+
+-%%: prints a percent sign
+
+-%b: converts unsigned integer to decimal 
+
+-%u: takes input as an unsigned integer
+
+-%o: converts unsigned integer to octal
+
+-%x: converts unsigned integer to hexadecimal (lowercase)
+
+-%X: converts unsigned integer to hexadecimal (uppercase)
+
+-%S: takes input as a string but replaces nonprintable chars with its ascii
+values
+
+-%r: takes input as a string and reverses it
+
+-%R: takes input as a string and returns its ROT13 encryption
+ 
 .SH BUGS
 No known bugs.
 .SH REPORTING BUGS
