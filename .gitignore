@@ -1,1 +1,5 @@
+# ignore files
 main*
+*~
+empty
+a.out
