@@ -4,7 +4,7 @@
 
 /**
  * _printfo - print octal
- * @args: integer input 
+ * @args: integer input
  *
  * Return: number of characters printed
  */
