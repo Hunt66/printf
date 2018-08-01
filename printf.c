@@ -1,7 +1,7 @@
 #include <stdarg.h>
 #include "holberton.h"
 
-#define STRUCT_SIZE 13
+#define STRUCT_SIZE 14
 
 /**
  * _printf - prints data and formats it
@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 		       {'s', _printfs}, {'%', _printfp}, {'b', _printfb},
 		       {'r', _printfr}, {'R', _printfR}, {'u', _printfu},
 		       {'o', _printfo}, {'x', _printfx}, {'X', _printfX},
-		       {'S', _printfS}};
+		       {'S', _printfS}, {'p', _printfpp}};
 
 	if (!format)
 		return (-1);
