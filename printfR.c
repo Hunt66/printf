@@ -7,7 +7,7 @@
  *
  * Description: Function takes a string and prints its rot13
  * cypher
- * Return: num of char printed
+ * Return: number of char printed
  */
 int _printfR(va_list args)
 {

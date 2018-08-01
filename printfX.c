@@ -3,12 +3,10 @@
 #include<stdarg.h>
 
 /**
- *_printfx- converts decimal input to hex and prints it
+ *_printfX - converts decimal input to hex and prints it
  *@args: input decimal
  *Return: count
  */
-
-
 int _printfX(va_list args)
 {
 	unsigned int *list;
