@@ -30,5 +30,6 @@ int _printfo(va_list);
 int _printfx(va_list);
 int _printfX(va_list);
 int _printfS(va_list);
+int _printfpp(va_list);
 
 #endif
