@@ -2,12 +2,18 @@
 #include <stdlib.h>
 #include "holberton.h"
 
+/**
+ * _printfo - print octal
+ * @args: integer input 
+ *
+ * Return: number of characters printed
+ */
 int _printfo(va_list args)
 {
 
 	int count, i;
-	long unsigned int num = va_arg(args, unsigned int);
-	long unsigned int eight = 8;
+	unsigned long int num = va_arg(args, unsigned int);
+	unsigned long int eight = 8;
 	int *hold_num = malloc((4) * 30);
 
 

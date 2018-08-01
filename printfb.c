@@ -9,8 +9,8 @@
 
 int _printfb(va_list args)
 {
-	long unsigned int decimal = (unsigned int)va_arg(args, int);
-	long unsigned int div;
+	unsigned long int decimal = (unsigned int)va_arg(args, int);
+	unsigned long int div;
 	int count = 0;
 
 	if (decimal == 0)
@@ -27,6 +27,6 @@ int _printfb(va_list args)
 		count++;
 	}
 	_putchar((decimal / div) + '0');
-	count ++;
+	count++;
 	return (count);
 }
