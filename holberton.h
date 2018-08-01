@@ -29,5 +29,6 @@ int _printfu(va_list);
 int _printfo(va_list);
 int _printfx(va_list);
 int _printfX(va_list);
+int _printfS(va_list);
 
 #endif
