@@ -5,12 +5,10 @@
 int _print_hex(unsigned long input);
 
 /**
- *_printfp - prints the address of a pointer
+ *_printfpp - prints the address of a pointer
  *@args: input pointer
  *Return: number of chars printed
  */
-
-
 int _printfpp(va_list args)
 {
 	unsigned long address;
@@ -25,7 +23,12 @@ int _printfpp(va_list args)
 }
 
 
-
+/**
+ * _print_hex - print hex
+ * @input: input
+ *
+ * Return: number of chars printed
+ */
 int _print_hex(unsigned long input)
 {
 	unsigned long *list;
