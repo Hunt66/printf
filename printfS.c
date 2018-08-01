@@ -14,7 +14,7 @@
 int _printfS(va_list args)
 {
 	char *s = (char *)va_arg(args, char *);
-	int i, j, count = 0, num = 0, first = 0;
+	int i, j, count = 0, num = 0, first;
 	unsigned int *list;
 
 	if (!s)
@@ -24,6 +24,7 @@ int _printfS(va_list args)
 
 	for (i = 0; s[i]; i++)
 	{
+		first = 1;
 
 		if ((s[i] > 0 && s[i] < 32) || s[i] > 126)
 		{
