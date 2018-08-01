@@ -2,7 +2,6 @@
 #include <stdarg.h>
 #include <unistd.h>
 
-
 /**
  *_printfc - prints an input char
  *@args: the input char
@@ -13,7 +12,6 @@ int _printfc(va_list args)
 	_putchar((char)va_arg(args, int));
 	return (1);
 }
-
 
 /**
  *_printfs- prints an input string
@@ -36,7 +34,6 @@ int _printfs(va_list args)
 	return (i);
 }
 
-
 /**
  * _printfp - prints % char
  * @args: ist of args
@@ -51,8 +48,6 @@ int _printfp(va_list args)
 	_putchar('%');
 	return (1);
 }
-
-
 
 /**
  *  _putchar - writes the character c to stdout
