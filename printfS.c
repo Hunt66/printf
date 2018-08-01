@@ -14,7 +14,7 @@
 int _printfS(va_list args)
 {
 	char *s = (char *)va_arg(args, char *);
-	int i, j, count = 0, num = 0;
+	int i, j, count = 0, num = 0, first = 0;
 	unsigned int *list;
 
 	if (!s)
@@ -38,11 +38,14 @@ int _printfS(va_list args)
 			{
 				list[j] = num % 16;
 				num /= 16;
+
+				if (j > 0)
+					first = 0;
 			}
 
 			for (j -= 1; j >= 0; j--)
 			{
-				if (j == 0)
+				if (first)
 				{
 					_putchar('0');
 					count++;
